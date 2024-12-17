@@ -2,20 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    /* color: var(--foreground); */
+    /* background: var(--background); */
+    font-family: Arial, Helvetica, sans-serif;
   }
-}
+  .space-y-sm {
+    @apply flex flex-col w-full gap-y-4;
+  }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  label {
+    @apply text-sm font-semibold mb-1 block;
+  }
+  input,
+  textarea {
+    @apply border block border-solid border-gray-200 shadow-sm rounded py-1.5 px-2.5 w-full text-sm;
+  }
+
+  button {
+    @apply min-h-8 rounded bg-blue-500 text-white px-6 text-sm font-semibold;
+  }
 }
